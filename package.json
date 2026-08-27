@@ -1,0 +1,19 @@
+{
+  "name": "agenda de consultas",
+  "version": "1.0.0",
+  "description": "exemplo de cliente x servidor full-stack",
+  "main": "servidor/server.js",
+  "scripts": {
+    "dev": "node servidor/server.js"
+  },
+  "keywords": [
+    "paciente",
+    "peso"
+  ],
+  "author": "sarapss050410-alt",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
