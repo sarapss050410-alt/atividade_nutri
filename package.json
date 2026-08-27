@@ -1,16 +1,17 @@
 {
-  "name": "agenda de consultas",
+  "name": "consultas",
   "version": "1.0.0",
-  "description": "exemplo de cliente x servidor full-stack",
-  "main": "servidor/server.js",
+  "description": "Agenda de consultas com nutricionista",
+  "main": "server.js",
   "scripts": {
-    "dev": "node servidor/server.js"
+    "dev": "node server.js"
   },
   "keywords": [
-    "paciente",
-    "peso"
+    "consultas",
+    "nutricionista",
+    "imc"
   ],
-  "author": "sarapss050410-alt",
+  "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

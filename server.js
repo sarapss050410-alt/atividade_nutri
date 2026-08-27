@@ -1,32 +1,34 @@
 const express = require("express")
-const pedidos = require("../dados.json")
+const consultas = require("./servidor/dados.json")
 
-const mostrarConsulta = (req, res) => {
-    res.send(consulta)
+const mostrarConsultas = (req, res) => {
+    calcularIMC()
+    res.send(consultas)
 }
 
-const novoPaciente = (req, res) => {
+const novaConsulta = (req, res) => {
     if(req.body){
-        res.send("Paciente em Analise")
-        pedidos.push(req.body)
+        res.send("Consulta recebida, em análise")
+        consultas.push(req.body)
     }else{
-        res.send("Erro ao cadastrar novo Paciente")
+        res.send("Erro ao receber consulta")
     }   
 }
 
-const calcularPeso=() => {
-    pedidos.forEach(p=>{
-        p.subTotal = peso / (altura * altura)
+const calcularIMC = () => {
+    consultas.forEach(c=>{
+        c.imc = c.peso / (c.altura * c.altura)
     })
 }
+
 const app = express()
 app.use(express.urlencoded({extended:true}))
 const porta = 3000
 
-app.post("/", novoPaciente)
-app.get("/", mostraPacientes)
+app.post("/", novaConsulta)
+app.get("/", mostrarConsultas)
 
 app.listen(porta, () => { 
-    console.log(`Paciente: http://127.0.0.1:5500/cliente/`)
+    console.log(`Cliente: http://127.0.0.1:5500/cliente/`)
     console.log(`Servidor: http://127.0.0.1:${porta}`)
 })
